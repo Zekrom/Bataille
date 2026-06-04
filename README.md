@@ -2,6 +2,10 @@
 
 Projet Java pour un jeu de bataille utilisant Maven.
 
+Lors d'une égalité , le problème est qu'il faut recréer un contexte de jeu (joueurs et pile de carte) à part 
+et que ce contexte peut provoquer une autre égalité , j'ai pensé dans un premier temps à faire une fonction récursive puisque l'égalité peut appeler une égalité
+mais la fonction a deux paramètres à gérer , donc j'ai utilisé les streams et la méthode removeIf (A partir de Java 21)
+
 ## 📋 Prérequis
 
 - **Java 21** ou supérieur
