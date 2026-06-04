@@ -7,7 +7,7 @@ public class Player {
 
     private int id;
 
-    public ArrayList<Card> deck;
+    private ArrayList<Card> deck;
 
     public Player(int id) {
         this.id = id;
@@ -32,5 +32,9 @@ public class Player {
 
     public boolean gameOver(){
         return deck.isEmpty();
+    }
+
+    public ArrayList<Card> getDeck() {
+        return (ArrayList<Card>) deck.clone();
     }
 }

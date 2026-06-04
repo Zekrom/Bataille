@@ -89,7 +89,7 @@ public class Main {
                         if (choice == 1) {
 
                         } else if (choice == 2) {
-                            players.forEach(player -> System.out.println("Joueur " + player.getId() + " a " + player.deck));
+                            players.forEach(player -> System.out.println("Joueur " + player.getId() + " a " + player.getDeck()));
                             continue;
                         } else if (choice == 3) {
                             loop = true;
@@ -121,7 +121,7 @@ public class Main {
                             .filter(card -> card.rivals(winnerCard))
                             .mapToInt(card -> board.indexOf(card))
                             .mapToObj(n -> players.get(n))
-                            .filter(player -> !player.deck.isEmpty())
+                            .filter(player -> !player.gameOver())
                             .collect(Collectors.toCollection(ArrayList::new));
 
 
@@ -158,7 +158,7 @@ public class Main {
         for (int i = 0; i < players.size(); i++) {
             System.out.println("Joueur "+ players.get(i).getId()
                     +" : Joue "+ board.get(i)
-                    + " ( " + players.get(i).deck.size()
+                    + " ( " + players.get(i).getDeck().size()
                     + " cartes restantes )");
         }
     }
